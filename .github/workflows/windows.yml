@@ -1,0 +1,50 @@
+name: Windows
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  MKL_URL: "https://romang.blob.core.windows.net/mariandev/ci/mkl-2020.1-windows-static.zip"
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+        - windows-2019
+        - windows-2022
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Download MKL
+        run: |
+          C:\msys64\usr\bin\wget.exe -nv ${{ env.MKL_URL }} -O mkl.zip
+          Expand-Archive -Force mkl.zip ${{ github.workspace }}\mkl
+          # Set MKLROOT environment variable so that CMake can find MKL
+          echo "MKLROOT=${{ github.workspace }}\mkl" | Out-File -FilePath $env:GITHUB_ENV  -Encoding utf8 -Append
+        shell: powershell
+
+      - name: Configure CMake
+        run: |
+          cmake -E make_directory build
+          cd build
+          cmake ..
+
+      - name: Compile
+        working-directory: build
+        run: cmake --build . -j 4
+
+      - name: Run
+        run: .\build\Debug\example.exe
