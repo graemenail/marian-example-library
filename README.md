@@ -9,6 +9,14 @@ dependency. The dependency to Marian is facilitated by a submodule to [marian-de
 
 ## Usage
 
+Acquiring a copy of this repository can be done with the "[Use this template][template]" button, which generates a new repository with the same structure and content.
+
+Alternatively, you can clone it locally via
+```shell
+git clone https://github.com/marian-nmt/marian-example-library
+cd marian-example-library
+```
+
 ### Compile
 ```shell
 mkdir build
@@ -45,3 +53,4 @@ Additionally, the Marian submodule is updatable via dependabot.
 [marian]: https://marian-nmt.github.io/
 [marian-dev]: https://github.com/marian-nmt/marian-dev
 [dev_docs]: https://marian-nmt.github.io/docs/api/graph.html
+[template]: https://github.com/marian-nmt/marian-example-library/generate
