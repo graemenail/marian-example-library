@@ -49,6 +49,24 @@ These compile and run the example executable.
 
 Additionally, the Marian submodule is updatable via dependabot.
 
+## Acknowledgements
+The development of Marian received funding from the European Union's
+_Horizon 2020 Research and Innovation Programme_ under grant agreements
+688139 ([SUMMA](http://www.summa-project.eu); 2016-2019),
+645487 ([Modern MT](http://www.modernmt.eu); 2015-2017),
+644333 ([TraMOOC](http://tramooc.eu/); 2015-2017),
+644402 ([HiML](http://www.himl.eu/); 2015-2017),
+825303 ([Bergamot](https://browser.mt/); 2019-2021),
+the European Union's Connecting Europe Facility project
+2019-EU-IA-0045 ([User-focused Marian](https://marian-project.eu); 2020-2022),
+the Amazon Academic Research Awards program,
+the World Intellectual Property Organization,
+and is based upon work supported in part by the Office of the Director of
+National Intelligence (ODNI), Intelligence Advanced Research Projects Activity
+(IARPA), via contract #FA8650-17-C-9117.
+
+This software contains source code provided by NVIDIA Corporation.
+
 <!-- Links -->
 [marian]: https://marian-nmt.github.io/
 [marian-dev]: https://github.com/marian-nmt/marian-dev
